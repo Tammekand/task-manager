@@ -28,6 +28,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "23c0b70f-d98a-431f-b9c5-2cd6c057e336"
+      }
+    },
+    "owner": "tammekand"
   }
 }
