@@ -1,41 +1,39 @@
 {
-  "expo": {
-    "name": "task-manager",
-    "slug": "task-manager",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.tammekand.taskmanager"
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      },
-      "package": "com.tammekand.taskmanager"
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "23c0b70f-d98a-431f-b9c5-2cd6c057e336"
-      }
-    },
-    "owner": "tammekand"
-  }
+	"expo": {
+		"name": "task-manager",
+		"slug": "task-manager",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"icon": "./assets/icon.png",
+		"userInterfaceStyle": "light",
+		"splash": {
+			"image": "./assets/task-ico.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#ffffff"
+		},
+		"updates": {
+			"fallbackToCacheTimeout": 0
+		},
+		"assetBundlePatterns": ["**/*"],
+		"ios": {
+			"supportsTablet": true,
+			"bundleIdentifier": "com.tammekand.taskmanager"
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/task-ico.png",
+				"backgroundColor": "#FFFFFF"
+			},
+			"package": "com.tammekand.taskmanager"
+		},
+		"web": {
+			"favicon": "./assets/favicon.png"
+		},
+		"extra": {
+			"eas": {
+				"projectId": "23c0b70f-d98a-431f-b9c5-2cd6c057e336"
+			}
+		},
+		"owner": "tammekand"
+	}
 }
