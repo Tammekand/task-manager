@@ -6,6 +6,7 @@ import {
 	TextInput,
 	KeyboardAvoidingView,
 	Pressable,
+	Alert,
 } from "react-native";
 import Task from "./components/Task";
 
@@ -14,14 +15,30 @@ export default function App() {
 	const [tasks, setTasks] = useState([]);
 
 	const handleAddTask = () => {
+		if (!task || task === "") return;
 		setTasks([...tasks, task]);
 		setTask(null);
 	};
 
 	const handleDeleteTask = (index) => {
-		let newTasks = [...tasks];
-		newTasks.splice(index, 1);
-		setTasks(newTasks);
+		Alert.alert(
+			"Delete Task",
+			"Are you sure you want to delete this task?",
+			[
+				{
+					text: "Cancel",
+					style: "cancel",
+				},
+				{
+					text: "OK",
+					onPress: () => {
+						let newTasks = [...tasks];
+						newTasks.splice(index, 1);
+						setTasks(newTasks);
+					},
+				},
+			]
+		);
 	};
 
 	return (
@@ -31,12 +48,11 @@ export default function App() {
 				<View style={styles.items}>
 					{tasks.map((task, index) => {
 						return (
-							<Pressable
-								key={index}
-								onPress={() => handleDeleteTask(index)}
-							>
-								<Task text={task} />
-							</Pressable>
+							<Task
+								text={task}
+								index={index}
+								handleDelete={handleDeleteTask}
+							/>
 						);
 					})}
 				</View>
@@ -50,6 +66,7 @@ export default function App() {
 					placeholder={"Write a task"}
 					value={task}
 					onChangeText={(text) => setTask(text)}
+					onSubmitEditing={() => handleAddTask()}
 				/>
 				<Pressable
 					onPress={() => {
@@ -95,11 +112,12 @@ const styles = StyleSheet.create({
 		marginLeft: 20,
 	},
 	input: {
+		flex: 1,
 		padding: 15,
 	},
 	add: {
 		color: "green",
 		fontSize: 30,
-		paddingRight: 10,
+		paddingHorizontal: 10,
 	},
 });

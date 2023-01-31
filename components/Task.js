@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
 
 export default function Task(props) {
 	return (
@@ -10,6 +10,11 @@ export default function Task(props) {
 					source={require("../assets/task-ico.png")}
 				></Image>
 				<Text style={styles.text}>{props.text}</Text>
+			</View>
+			<View>
+				<Pressable onPress={() => props.handleDelete(props.index)}>
+					<Text style={styles.delete}>X</Text>
+				</Pressable>
 			</View>
 		</View>
 	);
@@ -37,5 +42,11 @@ const styles = StyleSheet.create({
 	},
 	text: {
 		maxWidth: "100%",
+	},
+	delete: {
+		paddingHorizontal: 10,
+		color: "#FF0000",
+		fontWeight: "bold",
+		fontSize: 15,
 	},
 });
